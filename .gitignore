@@ -164,3 +164,28 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ========================================
+# Arquivos Pessoais e Documentação Local
+# ========================================
+
+# Guias pessoais (não precisam ir para o GitHub)
+GIT_DESKTOP_GUIDE.md
+GITHUB_GUIDE.md
+NOTEBOOK_GUIDE.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+
+# Artigos e conteúdo pessoal
+LINKEDIN_ARTICLE.md
+*_ARTICLE.md
+*_POST.md
+
+# Scripts de desenvolvimento pessoal
+update_notebook.py
+debug_*.py
+
+# Notas e rascunhos pessoais
+NOTES.md
+TODO.md
+DRAFT*.md

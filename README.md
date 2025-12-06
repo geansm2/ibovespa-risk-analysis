@@ -188,9 +188,9 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ### 👤 Autor
 
-**Gean Santos**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [Seu Nome](https://linkedin.com/in/seu-perfil)
+**Gean Paulo Soares Machado**
+- GitHub: [@seu-usuario](https://github.com/geansm2)
+- LinkedIn: [Seu Nome](https://linkedin.com/in/gean-machado)
 
 ### 🙏 Agradecimentos
 
@@ -379,9 +379,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 👤 Author
 
-**Gean Santos**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your Name](https://linkedin.com/in/your-profile)
+**Gean Paulo Soares Machado**
+- GitHub: [@seu-usuario](https://github.com/geansm2)
+- LinkedIn: [Seu Nome](https://linkedin.com/in/gean-machado)
 
 ### 🙏 Acknowledgments
 

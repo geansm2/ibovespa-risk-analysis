@@ -7,7 +7,7 @@ This script runs the complete analysis pipeline:
 3. Generates visualizations
 4. Exports results
 
-Author: Gean Santos
+Author: Gean Paulo Soares Machado
 Date: December 2025
 """
 
@@ -158,21 +158,21 @@ def main():
     
     # ========== COMPLETION ==========
     print("\n" + "=" * 80)
-    print("✅ ANALYSIS COMPLETE!")
+    print("ANALYSIS COMPLETE!")
     print("=" * 80)
     print("\nGenerated files:")
-    print("  📊 results/risk_metrics_summary.csv")
-    print("  📊 results/portfolio_comparison.csv")
-    print("  📈 results/01_price_history.png")
-    print("  📈 results/02_returns_distribution.png")
-    print("  📈 results/03_risk_metrics_comparison.png")
-    print("  📈 results/04_metrics_heatmap.png")
-    print("  📈 results/05_sharpe_sortino_comparison.png")
-    print("  📈 results/06_complete_dashboard.png")
-    print("  ⭐ results/07_drawdown_waterfall.png (NEW!)")
-    print("  ⭐ results/08_var_cvar_distribution.png (NEW!)")
-    print("  ⭐ results/09_correlation_heatmap.png (NEW!)")
-    print("  ⭐ results/10_risk_return_bubble.png (NEW!)")
+    print("   results/risk_metrics_summary.csv")
+    print("   results/portfolio_comparison.csv")
+    print("   results/01_price_history.png")
+    print("   results/02_returns_distribution.png")
+    print("   results/03_risk_metrics_comparison.png")
+    print("   results/04_metrics_heatmap.png")
+    print("   results/05_sharpe_sortino_comparison.png")
+    print("   results/06_complete_dashboard.png")
+    print("   results/07_drawdown_waterfall.png (NEW!)")
+    print("   results/08_var_cvar_distribution.png (NEW!)")
+    print("   results/09_correlation_heatmap.png (NEW!)")
+    print("   results/10_risk_return_bubble.png (NEW!)")
     print("\n" + "=" * 80 + "\n")
     
     return analyzer, metrics, summary, comparison

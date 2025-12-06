@@ -6,9 +6,9 @@
 
 ## Português
 
-Obrigado por considerar contribuir para este projeto! 🎉
+Obrigado por considerar contribuir para este projeto!
 
-### 🐛 Reportando Bugs
+### Reportando Bugs
 
 Se você encontrou um bug, por favor abra uma [issue](../../issues) incluindo:
 
@@ -26,7 +26,7 @@ Se você encontrou um bug, por favor abra uma [issue](../../issues) incluindo:
    - Versão das bibliotecas (`pip list`)
 6. **Screenshots** (se aplicável)
 
-### 💡 Sugerindo Melhorias
+### Sugerindo Melhorias
 
 Adoraríamos ouvir suas ideias! Para sugerir melhorias:
 
@@ -38,7 +38,7 @@ Adoraríamos ouvir suas ideias! Para sugerir melhorias:
    - Alternativas consideradas
    - Impacto esperado
 
-### 🔧 Contribuindo com Código
+### Contribuindo com Código
 
 #### Preparando o Ambiente
 
@@ -143,7 +143,7 @@ Exemplos:
    - Referencie issues relacionadas
    - Adicione screenshots se aplicável
 
-### 📝 Melhorando a Documentação
+### Melhorando a Documentação
 
 Documentação é crucial! Você pode ajudar:
 
@@ -153,7 +153,7 @@ Documentação é crucial! Você pode ajudar:
 - Traduzindo conteúdo
 - Criando tutoriais
 
-### ✅ Checklist do Pull Request
+### Checklist do Pull Request
 
 Antes de submeter, verifique:
 
@@ -164,7 +164,7 @@ Antes de submeter, verifique:
 - [ ] O commit segue a convenção de commits
 - [ ] A branch está atualizada com main
 
-### 🤔 Dúvidas?
+### Dúvidas?
 
 Não hesite em abrir uma issue com a tag `question` ou entrar em contato!
 
@@ -172,9 +172,9 @@ Não hesite em abrir uma issue com a tag `question` ou entrar em contato!
 
 ## English
 
-Thank you for considering contributing to this project! 🎉
+Thank you for considering contributing to this project!
 
-### 🐛 Reporting Bugs
+### Reporting Bugs
 
 If you found a bug, please open an [issue](../../issues) including:
 
@@ -192,7 +192,7 @@ If you found a bug, please open an [issue](../../issues) including:
    - Library versions (`pip list`)
 6. **Screenshots** (if applicable)
 
-### 💡 Suggesting Enhancements
+### Suggesting Enhancements
 
 We'd love to hear your ideas! To suggest improvements:
 
@@ -204,7 +204,7 @@ We'd love to hear your ideas! To suggest improvements:
    - Alternatives considered
    - Expected impact
 
-### 🔧 Contributing Code
+### Contributing Code
 
 #### Setting Up the Environment
 
@@ -309,7 +309,7 @@ Examples:
    - Reference related issues
    - Add screenshots if applicable
 
-### 📝 Improving Documentation
+### Improving Documentation
 
 Documentation is crucial! You can help by:
 
@@ -319,7 +319,7 @@ Documentation is crucial! You can help by:
 - Translating content
 - Creating tutorials
 
-### ✅ Pull Request Checklist
+### Pull Request Checklist
 
 Before submitting, verify:
 
@@ -330,10 +330,10 @@ Before submitting, verify:
 - [ ] Commit follows commit convention
 - [ ] Branch is up to date with main
 
-### 🤔 Questions?
+### Questions?
 
 Don't hesitate to open an issue with the `question` tag or reach out!
 
 ---
 
-**Thank you for your contribution! 🙏**
+**Thank you for your contribution!**

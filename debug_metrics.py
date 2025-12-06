@@ -17,7 +17,7 @@ from analysis.risk_metrics import IbovespaRiskAnalyzer
 import pandas as pd
 
 print("=" * 80)
-print("🔍 DEBUGGING METRICS")
+print("DEBUGGING METRICS")
 print("=" * 80)
 
 # Download data
@@ -25,26 +25,26 @@ tickers = ['PETR4.SA', 'VALE3.SA']
 analyzer = IbovespaRiskAnalyzer(tickers)
 data = analyzer.download_data()
 
-print(f"\n📊 Data shape: {data.shape}")
-print(f"📊 Data columns: {list(data.columns)}")
+print(f"\nData shape: {data.shape}")
+print(f"Data columns: {list(data.columns)}")
 
 # Calculate metrics with smaller window
-print("\n\n🧪 Testing with window=21 (3 weeks)...")
+print("\n\nTesting with window=21 (3 weeks)...")
 metrics = analyzer.calculate_all_metrics(window=21)
 
-print("\n📈 Sharpe Ratio shape:", metrics['sharpe'].shape)
-print("\n📈 First 5 Sharpe values:")
+print("\nSharpe Ratio shape:", metrics['sharpe'].shape)
+print("\nFirst 5 Sharpe values:")
 print(metrics['sharpe'].head())
 
-print("\n📈 Last 5 Sharpe values:")
+print("\nLast 5 Sharpe values:")
 print(metrics['sharpe'].tail())
 
-print("\n📈 Count of non-NaN values per column:")
+print("\nCount of non-NaN values per column:")
 print(metrics['sharpe'].count())
 
 # Try to get latest
 summary = analyzer.get_latest_metrics()
-print("\n📊 Latest metrics summary:")
+print("\nLatest metrics summary:")
 print(summary)
 
 print("\n" + "=" * 80)
