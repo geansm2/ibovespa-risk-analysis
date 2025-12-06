@@ -1,3 +1,7 @@
+# ========================================
+# Python
+# ========================================
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -20,21 +24,46 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # PyInstaller
 *.manifest
 *.spec
 
+# ========================================
+# Testing & Coverage
+# ========================================
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# ========================================
 # Jupyter Notebook
+# ========================================
+
 .ipynb_checkpoints
+*.ipynb_checkpoints/
 
-# pyenv
-.python-version
-
+# ========================================
 # Environments
+# ========================================
+
 .env
 .venv
 env/
@@ -42,20 +71,96 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.python-version
 
-# IDE
+# ========================================
+# IDEs & Editors
+# ========================================
+
+# VSCode
 .vscode/
+*.code-workspace
+
+# PyCharm
 .idea/
+
+# Vim
 *.swp
 *.swo
 *~
 
-# Data files
-data/
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ========================================
+# Data & Results (Arquivos Temporários)
+# ========================================
+
+# Dados baixados
+data/raw/
+data/processed/
+data/cache/
+
+# Arquivos de dados
 *.csv
 *.xlsx
+*.xls
 *.parquet
+*.feather
+*.h5
+*.hdf5
+*.pickle
+*.pkl
 
-# OS
+# Resultados e outputs
+results/
+output/
+outputs/
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.svg
+
+# Logs
+*.log
+logs/
+
+# ========================================
+# Sistema Operacional
+# ========================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+
+# Linux
+*~
+
+# ========================================
+# Outros
+# ========================================
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
