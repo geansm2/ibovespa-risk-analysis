@@ -59,11 +59,11 @@ def main():
     tickers = ['PETR4.SA', 'VALE3.SA', 'ITUB4.SA', 'BBDC4.SA', 'ABEV3.SA']
     
     print("Selected stocks:")
-    print("  🛢️  PETR4 - Petrobras (Oil & Gas)")
-    print("  ⛏️  VALE3 - Vale (Mining)")
-    print("  🏦 ITUB4 - Itaú Unibanco (Banking)")
-    print("  🏦 BBDC4 - Bradesco (Banking)")
-    print("  🍺 ABEV3 - Ambev (Beverages)\n")
+    print(" PETR4 - Petrobras (Oil & Gas)")
+    print(" VALE3 - Vale (Mining)")
+    print(" ITUB4 - Itaú Unibanco (Banking)")
+    print(" BBDC4 - Bradesco (Banking)")
+    print(" ABEV3 - Ambev (Beverages)\n")
     
     analyzer = IbovespaRiskAnalyzer(tickers)
     data = analyzer.download_data()
@@ -98,7 +98,7 @@ def main():
     
     print("Comparing 4 portfolio strategies:")
     for strategy_name, weights in strategies.items():
-        print(f"\n  📊 {strategy_name}:")
+        print(f"\n  {strategy_name}:")
         for stock, weight in weights.items():
             print(f"      {stock}: {weight*100:.1f}%")
     
@@ -112,7 +112,7 @@ def main():
     
     # Export portfolio results
     comparison.to_csv('results/portfolio_comparison.csv')
-    print("\n📁 Portfolio comparison exported to results/portfolio_comparison.csv")
+    print("\n Portfolio comparison exported to results/portfolio_comparison.csv")
     
     # ========== STEP 5: VISUALIZATIONS ==========
     print("\n" + "=" * 80)

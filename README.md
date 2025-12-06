@@ -1,4 +1,4 @@
-# 🇧🇷 Análise de Risco do Ibovespa | Ibovespa Risk Analysis 📊
+# 🇧🇷 Análise de Risco do Ibovespa | Ibovespa Risk Analysis
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
 [![SquareQuant](https://img.shields.io/badge/SquareQuant-Latest-green)](https://github.com/SquareQuant/squarequant-package)
@@ -10,18 +10,18 @@
 
 ## Português
 
-### 📖 Sobre o Projeto
+### Sobre o Projeto
 
 Este projeto apresenta uma análise quantitativa abrangente das **5 ações mais líquidas do Ibovespa**, utilizando a biblioteca open-source [SquareQuant](https://github.com/SquareQuant/squarequant-package). O objetivo é demonstrar técnicas modernas de análise de risco financeiro aplicadas ao mercado brasileiro.
 
 **Ações Analisadas:**
-- 🛢️ **PETR4** - Petrobras (Petróleo & Gás)
-- ⛏️ **VALE3** - Vale (Mineração)
-- 🏦 **ITUB4** - Itaú Unibanco (Bancário)
-- 🏦 **BBDC4** - Bradesco (Bancário)
-- 🍺 **ABEV3** - Ambev (Bebidas)
+-  **PETR4** - Petrobras (Petróleo & Gás)
+-  **VALE3** - Vale (Mineração)
+-  **ITUB4** - Itaú Unibanco (Bancário)
+-  **BBDC4** - Bradesco (Bancário)
+-  **ABEV3** - Ambev (Bebidas)
 
-### ✨ Funcionalidades
+### Funcionalidades
 
 - **Download Automático de Dados**: Coleta dados históricos via Yahoo Finance
 - **Métricas de Risco Completas**: Calcula 9 métricas diferentes
@@ -38,7 +38,7 @@ Este projeto apresenta uma análise quantitativa abrangente das **5 ações mais
 - **Visualizações Profissionais**: Gráficos e dashboards interativos
 - **Exportação de Resultados**: Dados em CSV para análises adicionais
 
-### 🚀 Instalação
+### Instalação
 
 1. **Clone o repositório:**
 ```bash
@@ -57,7 +57,7 @@ source venv/bin/activate  # No Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 💻 Uso
+### Uso
 
 #### Execução Rápida
 
@@ -129,7 +129,7 @@ plot_risk_metrics_comparison(metrics, save_path='metrics.png')
 create_dashboard(data, metrics, save_path='dashboard.png')
 ```
 
-### 📊 Resultados
+### Resultados
 
 Após executar `main.py`, você encontrará na pasta `results/`:
 
@@ -145,7 +145,7 @@ Após executar `main.py`, você encontrará na pasta `results/`:
   - `05_sharpe_sortino_comparison.png` - Sharpe vs Sortino
   - `06_complete_dashboard.png` - Dashboard completo
 
-### 📁 Estrutura do Projeto
+### Estrutura do Projeto
 
 ```
 ibovespa-risk-analysis/
@@ -168,7 +168,7 @@ ibovespa-risk-analysis/
 └── LICENSE
 ```
 
-### 🤝 Contribuindo
+### Contribuindo
 
 Contribuições são bem-vindas! Veja [CONTRIBUTING.md](CONTRIBUTING.md) para detalhes sobre:
 - Como reportar bugs
@@ -176,23 +176,23 @@ Contribuições são bem-vindas! Veja [CONTRIBUTING.md](CONTRIBUTING.md) para de
 - Processo de Pull Request
 - Padrões de código
 
-### 📚 Recursos Adicionais
+### Recursos Adicionais
 
 - [Documentação SquareQuant](https://github.com/SquareQuant/squarequant-package)
 - [Notebooks Jupyter](notebooks/) - Análises interativas
 - [Artigos sobre Análise de Risco](https://www.investopedia.com/terms/r/risk-analysis.asp)
 
-### 📄 Licença
+### Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-### 👤 Autor
+### Autor
 
 **Gean Paulo Soares Machado**
 - GitHub: [@seu-usuario](https://github.com/geansm2)
 - LinkedIn: [Seu Nome](https://linkedin.com/in/gean-machado)
 
-### 🙏 Agradecimentos
+### Agradecimentos
 
 - [SquareQuant](https://github.com/SquareQuant/squarequant-package) - Biblioteca de análise quantitativa
 - Comunidade Python de finanças quantitativas
@@ -201,18 +201,18 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 ## English
 
-### 📖 About The Project
+### About The Project
 
 This project presents a comprehensive quantitative analysis of the **top 5 most liquid stocks in the Ibovespa index**, using the open-source [SquareQuant](https://github.com/SquareQuant/squarequant-package) library. The goal is to demonstrate modern financial risk analysis techniques applied to the Brazilian market.
 
 **Analyzed Stocks:**
-- 🛢️ **PETR4** - Petrobras (Oil & Gas)
-- ⛏️ **VALE3** - Vale (Mining)
-- 🏦 **ITUB4** - Itaú Unibanco (Banking)
-- 🏦 **BBDC4** - Bradesco (Banking)
-- 🍺 **ABEV3** - Ambev (Beverages)
+-  **PETR4** - Petrobras (Oil & Gas)
+-  **VALE3** - Vale (Mining)
+-  **ITUB4** - Itaú Unibanco (Banking)
+-  **BBDC4** - Bradesco (Banking)
+-  **ABEV3** - Ambev (Beverages)
 
-### ✨ Features
+### Features
 
 - **Automatic Data Download**: Fetches historical data via Yahoo Finance
 - **Comprehensive Risk Metrics**: Calculates 9 different metrics
@@ -229,7 +229,7 @@ This project presents a comprehensive quantitative analysis of the **top 5 most 
 - **Professional Visualizations**: Charts and interactive dashboards
 - **Results Export**: CSV data for additional analysis
 
-### 🚀 Installation
+### Installation
 
 1. **Clone the repository:**
 ```bash
@@ -248,7 +248,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 💻 Usage
+### Usage
 
 #### Quick Start
 
@@ -320,7 +320,7 @@ plot_risk_metrics_comparison(metrics, save_path='metrics.png')
 create_dashboard(data, metrics, save_path='dashboard.png')
 ```
 
-### 📊 Results
+### Results
 
 After running `main.py`, you'll find in the `results/` folder:
 
@@ -336,7 +336,7 @@ After running `main.py`, you'll find in the `results/` folder:
   - `05_sharpe_sortino_comparison.png` - Sharpe vs Sortino
   - `06_complete_dashboard.png` - Complete dashboard
 
-### 📁 Project Structure
+### Project Structure
 
 ```
 ibovespa-risk-analysis/
@@ -359,7 +359,7 @@ ibovespa-risk-analysis/
 └── LICENSE
 ```
 
-### 🤝 Contributing
+### Contributing
 
 Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
 - How to report bugs
@@ -367,27 +367,27 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for details on
 - Pull Request process
 - Code standards
 
-### 📚 Additional Resources
+### Additional Resources
 
 - [SquareQuant Documentation](https://github.com/SquareQuant/squarequant-package)
 - [Jupyter Notebooks](notebooks/) - Interactive analyses
 - [Risk Analysis Articles](https://www.investopedia.com/terms/r/risk-analysis.asp)
 
-### 📄 License
+### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 👤 Author
+### Author
 
 **Gean Paulo Soares Machado**
 - GitHub: [@seu-usuario](https://github.com/geansm2)
 - LinkedIn: [Seu Nome](https://linkedin.com/in/gean-machado)
 
-### 🙏 Acknowledgments
+### Acknowledgments
 
 - [SquareQuant](https://github.com/SquareQuant/squarequant-package) - Quantitative analysis library
 - Python quantitative finance community
 
 ---
 
-**⭐ If you found this project useful, please consider giving it a star!**
+**If you found this project useful, please consider giving it a star!**
