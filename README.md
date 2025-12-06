@@ -189,7 +189,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 ### Autor
 
 **Gean Paulo Soares Machado**
-- GitHub: [@sgeansm2](https://github.com/geansm2)
+- GitHub: [@geansm2](https://github.com/geansm2)
 - LinkedIn: [Gean Machado](https://linkedin.com/in/gean-machado)
 
 ### Agradecimentos
@@ -380,7 +380,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Author
 
 **Gean Paulo Soares Machado**
-- GitHub: [@sgeansm2](https://github.com/geansm2)
+- GitHub: [@geansm2](https://github.com/geansm2)
 - LinkedIn: [Gean Machado](https://linkedin.com/in/gean-machado)
 
 ### Acknowledgments
