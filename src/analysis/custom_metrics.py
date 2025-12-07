@@ -24,14 +24,40 @@ def calculate_sharpe_ratio(returns, risk_free_rate=0.0, periods_per_year=252):
     
     Args:
         returns (pd.Series or pd.DataFrame): Asset returns
-        risk_free_rate (float): Annual risk-free rate
+        risk_free_rate (float or pd.Series): Risk-free rate. 
+                                           If float, assumed to be annualized.
+                                           If pd.Series, assumed to be daily rates aligned with returns.
         periods_per_year (int): Number of periods per year (252 for daily)
     
     Returns:
         float or pd.Series: Sharpe ratio(s)
     """
-    excess_returns = returns - (risk_free_rate / periods_per_year)
-    return np.sqrt(periods_per_year) * excess_returns.mean() / returns.std()
+    # Calculate excess returns
+    if isinstance(risk_free_rate, pd.Series):
+        # Dynamic daily risk-free rate
+        # Align indexes
+        common_idx = returns.index.intersection(risk_free_rate.index)
+        if len(common_idx) < len(returns):
+             # minimal warning or handling if alignment loses data
+             pass
+        
+        aligned_returns = returns.loc[common_idx]
+        aligned_rf = risk_free_rate.loc[common_idx]
+        
+        # If returns is DataFrame, subtract rf from each column
+        if isinstance(returns, pd.DataFrame):
+            excess_returns = aligned_returns.sub(aligned_rf, axis=0)
+        else:
+            excess_returns = aligned_returns - aligned_rf
+            
+        # For dynamic rf, we calculate stats on the excess returns series directly
+        return np.sqrt(periods_per_year) * excess_returns.mean() / excess_returns.std()
+        
+    else:
+        # Constant annualized risk-free rate
+        rf_daily = risk_free_rate / periods_per_year
+        excess_returns = returns - rf_daily
+        return np.sqrt(periods_per_year) * excess_returns.mean() / returns.std()
 
 
 def calculate_sortino_ratio(returns, risk_free_rate=0.0, periods_per_year=252):
@@ -40,28 +66,63 @@ def calculate_sortino_ratio(returns, risk_free_rate=0.0, periods_per_year=252):
     
     Args:
         returns (pd.Series or pd.DataFrame): Asset returns
-        risk_free_rate (float): Annual risk-free rate
+        risk_free_rate (float or pd.Series): Risk-free rate.
         periods_per_year (int): Number of periods per year
     
     Returns:
         float or pd.Series: Sortino ratio(s)
     """
-    excess_returns = returns - (risk_free_rate / periods_per_year)
-    downside_returns = returns[returns < 0]
-    downside_std = downside_returns.std()
-    
+    # Calculate excess returns
+    if isinstance(risk_free_rate, pd.Series):
+        # Dynamic calculation
+        common_idx = returns.index.intersection(risk_free_rate.index)
+        aligned_returns = returns.loc[common_idx]
+        aligned_rf = risk_free_rate.loc[common_idx]
+        
+        if isinstance(returns, pd.DataFrame):
+            excess_returns = aligned_returns.sub(aligned_rf, axis=0)
+        else:
+            excess_returns = aligned_returns - aligned_rf
+            
+        # Use aligned returns for downside calculation
+        returns_to_use = aligned_returns
+        
+    else:
+        # Constant calculation
+        rf_daily = risk_free_rate / periods_per_year
+        excess_returns = returns - rf_daily
+        returns_to_use = returns
+
+    # Calculate Downside deviation
     if isinstance(returns, pd.DataFrame):
         result = {}
         for col in returns.columns:
             col_excess = excess_returns[col]
-            col_downside = returns[col][returns[col] < 0]
-            col_downside_std = col_downside.std()
-            if col_downside_std > 0:
-                result[col] = np.sqrt(periods_per_year) * col_excess.mean() / col_downside_std
+            # Downside is defined typically as returns below a target (MAR). 
+            # Often target = 0 or target = risk_free. 
+            # Standard Sortino uses target = 0 for downside filter, but numer is excess return.
+            # Some definitions use target = risk_free for downside filter.
+            # We'll stick to: downside = returns < 0 (absolute loss) for consistency with common libraries,
+            # or we could strictly use returns < target. Let's use returns < 0 for "bad days".
+            
+            # Note: A stricter financial definition might use (R - Rf) < 0. 
+            # Let's check the previous implementation: it used `returns[returns < 0]`.
+            # We will maintain that logic for consistency.
+            
+            # Only consider the aligned portion if dynamic
+            col_returns = returns_to_use[col]
+            downside = col_returns[col_returns < 0]
+            downside_std = downside.std()
+            
+            if downside_std > 0:
+                result[col] = np.sqrt(periods_per_year) * col_excess.mean() / downside_std
             else:
                 result[col] = np.nan
         return pd.Series(result)
     else:
+        downside = returns_to_use[returns_to_use < 0]
+        downside_std = downside.std()
+        
         if downside_std > 0:
             return np.sqrt(periods_per_year) * excess_returns.mean() / downside_std
         return np.nan

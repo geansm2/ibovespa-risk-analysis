@@ -96,7 +96,7 @@ class IbovespaRiskAnalyzer:
         print(f"✅ Downloaded {len(self.data)} days of data")
         return self.data
     
-    def calculate_all_metrics(self, window=252):
+    def calculate_all_metrics(self, window=252, di_data=None):
         """
         Calculate all available risk metrics using custom implementations.
         
@@ -107,6 +107,7 @@ class IbovespaRiskAnalyzer:
         Args:
             window (int): Rolling window size (default: 252 trading days = 1 year)
                          Note: Custom metrics calculate overall metrics, not rolling
+            di_data (pd.DataFrame, optional): DataFrame with DI rates for dynamic risk-free calculation
             
         Returns:
             dict: Dictionary containing all calculated metrics
@@ -117,16 +118,24 @@ class IbovespaRiskAnalyzer:
         print(f"\n📈 Calculating risk metrics for: {', '.join(self.data.columns)}")
         print("  ℹ️  Using custom implementations (pandas + numpy)")
         
+        # Determine risk-free rate
+        if di_data is not None and 'di_daily_rate' in di_data.columns:
+            print("  ℹ️  Using dynamic DI risk-free rates")
+            risk_free_rate = di_data['di_daily_rate']
+        else:
+            print("  ℹ️  Using constant risk-free rate (0.0)")
+            risk_free_rate = 0.0
+        
         # Calculate returns
         returns = cm.calculate_returns(self.data)
         
         # Calculate all metrics using custom module
         print("  ⚙️  Calculating Sharpe Ratio...")
-        self.metrics['sharpe'] = pd.DataFrame({col: [cm.calculate_sharpe_ratio(returns[col])] 
+        self.metrics['sharpe'] = pd.DataFrame({col: [cm.calculate_sharpe_ratio(returns[col], risk_free_rate)] 
                                                for col in self.data.columns}, index=['value'])
         
         print("  ⚙️  Calculating Sortino Ratio...")
-        self.metrics['sortino'] = pd.DataFrame({col: [cm.calculate_sortino_ratio(returns[col])] 
+        self.metrics['sortino'] = pd.DataFrame({col: [cm.calculate_sortino_ratio(returns[col], risk_free_rate)] 
                                                 for col in self.data.columns}, index=['value'])
         
         print("  ⚙️  Calculating Volatility...")
@@ -175,7 +184,7 @@ class IbovespaRiskAnalyzer:
             # Custom metrics return single-row DataFrames
             results[metric_name] = metric_df.iloc[0]
         
-        summary = pd.DataFrame(results).T
+        summary = pd.DataFrame(results)
         return summary
     
     def export_results(self, filename='results/risk_metrics_summary.csv'):
